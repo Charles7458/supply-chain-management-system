@@ -1,0 +1,5 @@
+,warehouse_id,warehouse_name,city,state,zip_code,capacity
+0,1,East Coast Hub,Newark,Nj,7102,50000
+1,2,Southeast Center,Atlanta,Ga,30301,45000
+2,3,Midwest Depot,Chicago,Il,60601,55000
+3,4,West Coast Hub,Los Angeles,Ca,90001,60000

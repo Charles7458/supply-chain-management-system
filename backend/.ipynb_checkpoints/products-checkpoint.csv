@@ -1,0 +1,26 @@
+,product_id,sku,product_name,category,unit_price,created_at
+0,1,BV-0001,Sparkling Water 12pk,beverages,6.99,2025-08-16 09:34:21
+1,2,BV-0002,Orange Juice 64oz,beverages,4.49,2025-09-01 09:34:21
+2,3,BV-0003,Coffee Beans 1lb,beverages,12.99,2025-08-14 09:34:21
+3,4,BV-0004,Green Tea 20pk,beverages,5.99,2025-05-19 09:34:21
+4,5,SN-0001,Mixed Nuts 16oz,snacks,8.99,2025-07-05 09:34:21
+5,6,SN-0002,Granola Bars 12pk,snacks,6.49,2025-05-01 09:34:21
+6,7,SN-0003,Potato Chips Family,snacks,4.99,2025-09-27 09:34:21
+7,8,SN-0004,Trail Mix 24oz,snacks,9.49,2025-07-10 09:34:21
+8,9,SN-0005,Pretzels 18oz,snacks,3.99,2025-04-13 09:34:21
+9,10,PS-0001,Olive Oil 500ml,pantry,8.49,2025-04-15 09:34:21
+10,11,PS-0002,Pasta 1lb,pantry,2.49,2025-09-19 09:34:21
+11,12,PS-0003,Canned Tomatoes 28oz,pantry,1.99,2025-08-22 09:34:21
+12,13,PS-0004,Rice 5lb,pantry,6.99,2025-09-06 09:34:21
+13,14,PS-0005,Peanut Butter 16oz,pantry,4.49,2025-05-09 09:34:21
+14,15,HC-0001,All-Purpose Cleaner,household,5.99,2025-05-11 09:34:21
+15,16,HC-0002,Dish Soap,household,3.49,2025-07-21 09:34:21
+16,17,HC-0003,Laundry Detergent,household,11.99,2025-04-24 09:34:21
+17,18,HC-0004,Disinfectant Spray,household,4.99,2025-04-30 09:34:21
+18,19,PC-0001,Shampoo,personal care,7.49,2025-08-07 09:34:21
+19,20,PC-0002,Body Wash,personal care,6.99,2025-07-29 09:34:21
+20,21,PC-0003,Toothpaste,personal care,3.99,2025-06-10 09:34:21
+21,22,PC-0004,Deodorant,personal care,5.49,2025-06-21 09:34:21
+22,23,PD-0001,Paper Towels 6-Roll,paper goods,8.99,2025-08-04 09:34:21
+23,24,PD-0002,Toilet Paper 12-Roll,paper goods,12.49,2025-08-26 09:34:21
+24,25,PD-0003,Trash Bags 50ct,paper goods,9.99,2025-08-22 09:34:21
