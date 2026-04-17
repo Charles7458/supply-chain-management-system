@@ -80,7 +80,7 @@ const ForecastChart = () => {
   return (
     <div className="p-4 bg-white rounded-2xl shadow">
       <h2 className="text-xl font-semibold mb-4">
-        Demand Forecast vs Actual
+        Demand Forecast
       </h2>
 
       {/* 🔽 Filters */}

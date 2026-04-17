@@ -3,6 +3,7 @@ import SummaryCard from "../components/SummaryCards";
 import DemandTrendChart from "../components/DemandTrendChart";
 import ForecastChart from "../components/ForecastChart";
 import AlertsList from "../components/AlertsList";
+import RiskInsights from "../components/RiskInsights";
 import { API_ADDRESS } from "../backend";
 
 type Summary = {
@@ -61,17 +62,10 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* 🔹 Bottom Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
         <AlertsList />
 
-        <div className="bg-white p-4 rounded-2xl shadow-md">
-          <h2 className="text-lg font-semibold mb-4">
-            Risk Insights
-          </h2>
-          <p className="text-gray-500 text-sm">
-            (You can plug /dashboard/risk API here)
-          </p>
-        </div>
+        <RiskInsights />
       </div>
 
     </div>

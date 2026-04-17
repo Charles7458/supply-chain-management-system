@@ -1,40 +1,91 @@
-import React, { useEffect, useState } from "react";
-import { API_ADDRESS } from "../backend";
+import { useEffect, useState } from "react";
 
 type Alert = {
-  alert_id: number;
-  alert_type: string;
-  alert_message: string;
-  created_at: string;
+  product_id: number;
+  product_name: string;
+  warehouse_id: number;
+  warehouse_name: string;
+  available_stock: number;
+  status: string;
+  message: string;
 };
 
-const AlertsList: React.FC = () => {
-  const [alerts, setAlerts] = useState<Alert[]>([]);
+const AlertsPanel = () => {
+  const [groupBy, setGroupBy] = useState("none");
+  const [data, setData] = useState<any>(null);
+
+  const fetchAlerts = async () => {
+    const res = await fetch(
+      `http://127.0.0.1:8000/dashboard/alerts?group_by=${groupBy}`
+    );
+    const result = await res.json();
+    console.log(result)
+    setData(result);
+  };
 
   useEffect(() => {
-    fetch(API_ADDRESS+"/dashboard/alerts")
-      .then((res) => res.json())
-      .then(setAlerts)
-      .catch(console.error);
-  }, []);
+    fetchAlerts();
+  }, [groupBy]);
+
+  const getColor = (status: string) => {
+    if (status === "CRITICAL") return "text-red-600";
+    if (status === "REORDER") return "text-orange-500";
+    return "text-gray-500";
+  };
 
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-md">
-      <h2 className="text-lg font-semibold mb-4">Recent Alerts</h2>
+    <div className="p-4 bg-white rounded-2xl shadow h-fit">
+      <h2 className="text-xl font-semibold mb-4 inline me-10">Alerts</h2>
 
-      <div className="space-y-2 max-h-64 overflow-y-auto">
-        {alerts.map((a) => (
-          <div
-            key={a.alert_id}
-            className="border p-2 rounded-lg text-sm"
-          >
-            <p className="font-medium">{a.alert_type}</p>
-            <p className="text-gray-600">{a.alert_message}</p>
+      {/* 🔽 Group Selector */}
+      <select
+        value={groupBy}
+        onChange={(e) => setGroupBy(e.target.value)}
+        className="border px-3 py-2 mb-4 rounded"
+      >
+        <option value="none">No Grouping</option>
+        <option value="warehouse">Group by Warehouse</option>
+        <option value="status">Group by Status</option>
+      </select>
+
+      {/* 🔥 Render */}
+      {data?.group_by === "none" && (
+        <div className="space-y-2 overflow-auto h-90">
+          {data?.data?.map((alert: Alert, i: number) => (
+            <div key={i} className="p-3 border rounded">
+              <p className={getColor(alert.status)}>
+                {alert.message}
+              </p>
+              <p className="text-sm text-gray-500">
+                {alert.product_name} — {alert.warehouse_name}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* 🔥 GROUPED VIEW */}
+      {data?.group_by !== "none" &&
+        Object.entries(data?.data || {}).map(([group, alerts]: any) => (
+          <div key={group} className="mb-4">
+            <h3 className="font-semibold text-lg mb-2">{group}</h3>
+
+            <div className="space-y-2">
+              {alerts.map((alert: Alert, i: number) => (
+                <div key={i} className="p-3 border rounded">
+                  <p className={getColor(alert.status)}>
+                    {alert.message}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {alert.product_name} — {alert.warehouse_name}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
-      </div>
     </div>
   );
 };
 
-export default AlertsList;
+export default AlertsPanel;

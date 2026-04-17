@@ -135,7 +135,7 @@ const InventoryPage: React.FC = () => {
         <option value="CRITICAL">Critical</option>
       </select>
 
-      <button onClick={handlePolicy} className="bg-sky-500 rounded px-6 hover:cursor-pointer hover:bg-sky-600">Generate Policies</button>
+      {/* <button onClick={handlePolicy} className="bg-sky-500 rounded px-6 hover:cursor-pointer hover:bg-sky-600">Generate Policies</button> */}
     </div>
       {/* 🔹 Table */}
       <div className="bg-white rounded-2xl shadow-md overflow-x-auto">
