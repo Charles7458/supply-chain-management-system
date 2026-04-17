@@ -12,4 +12,4 @@ LightGBM and Random Forest
 
 The system generates future demand forecasts for specific items at specific warehouses
 It generates alerts when item stock goes below safety point
-Dedicated inventory and forecast pages for detailed view
+Dedicated inventory and forecast pages for detaile
